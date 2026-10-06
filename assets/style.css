@@ -140,3 +140,5 @@ nav a:hover { color: var(--accent); }
   text-indent: 0;
 }
 .ai-note a { color: var(--accent); text-decoration: none; }
+.post .content p.ai-note { text-indent: 0; }
+.post .content .poem p.note { margin: 0 0 0.4em; color: var(--muted); font-size: 13px; }
