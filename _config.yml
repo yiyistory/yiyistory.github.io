@@ -3,7 +3,8 @@ description: 易伊的文字 · Writings by Yi Yi
 author: 易伊 Yi Yi
 url: https://yiyistory.github.io
 permalink: /:year/:month/:title/
-timezone: America/Los_Angeles
+timezone: Asia/Shanghai
+future: true
 markdown: kramdown
 kramdown:
   input: GFM
