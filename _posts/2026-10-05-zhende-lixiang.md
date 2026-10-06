@@ -1,6 +1,7 @@
 ---
 title: 真的理想
 lang: zh
+translation: a-true-ideal
 category: 随笔
 ---
 

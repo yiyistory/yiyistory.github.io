@@ -1,6 +1,7 @@
 ---
 title: 时序责任法
 lang: zh
+translation: the-temporal-liability-act
 category: 小说
 date: 2026-10-06 09:30:00 +0800
 ---

@@ -7,6 +7,8 @@ layout: default
   <button data-lang="en">English</button>
 </div>
 
+<p class="ai-note en-only" hidden>All English versions on this site are automatic AI translations of the Chinese originals.<br>本站英文版均为 AI 自动翻译。</p>
+
 <ul class="post-list">
   {% for post in site.posts %}
   <li data-lang="{{ post.lang | default: 'zh' }}">
@@ -15,6 +17,7 @@ layout: default
       <p class="meta">
         {% if post.lang == 'en' %}{{ post.date | date: '%B %-d, %Y' }}{% else %}{{ post.date | date: '%Y 年 %-m 月 %-d 日' }}{% endif %}
         {% if post.category %} · {{ post.category }}{% endif %}
+        {% if post.ai_translation %} · AI translation{% endif %}
       </p>
       <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</p>
     </a>
@@ -28,6 +31,7 @@ layout: default
       document.querySelectorAll('.filters button').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       var lang = btn.dataset.lang;
+      document.querySelector('.en-only').hidden = lang !== 'en';
       document.querySelectorAll('.post-list li').forEach(function (li) {
         li.hidden = lang !== 'all' && li.dataset.lang !== lang;
       });

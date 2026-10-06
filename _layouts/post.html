@@ -11,6 +11,10 @@ layout: default
       {% if other %} · <a href="{{ other.url | relative_url }}">{% if page.lang == 'en' %}中文版{% else %}English{% endif %}</a>{% endif %}
     {% endif %}
   </p>
+  {% if page.ai_translation %}
+    {% assign original = site.posts | where: 'slug', page.translation | first %}
+  <p class="ai-note">This English version is an automatic AI translation of the Chinese original{% if original %}, <a href="{{ original.url | relative_url }}">{{ original.title }}</a>{% endif %}.<br>本文英文版为 AI 自动翻译。</p>
+  {% endif %}
   <div class="content">
     {{ content }}
   </div>
