@@ -2,22 +2,19 @@
 layout: default
 ---
 <div class="filters" role="tablist">
-  <button class="active" data-lang="all">全部 All</button>
-  <button data-lang="zh">中文</button>
+  <button class="active" data-lang="zh">中文</button>
   <button data-lang="en">English</button>
 </div>
 
-<p class="ai-note en-only" hidden>All English versions on this site are automatic AI translations of the Chinese originals.<br>本站英文版均为 AI 自动翻译。</p>
-
 <ul class="post-list">
   {% for post in site.posts %}
-  <li data-lang="{{ post.lang | default: 'zh' }}">
+  {% assign post_lang = post.lang | default: 'zh' %}
+  <li data-lang="{{ post_lang }}"{% if post_lang != 'zh' %} hidden{% endif %}>
     <a href="{{ post.url | relative_url }}">
       <h2>{{ post.title }}</h2>
       <p class="meta">
         {% if post.lang == 'en' %}{{ post.date | date: '%B %-d, %Y' }}{% else %}{{ post.date | date: '%Y 年 %-m 月 %-d 日' }}{% endif %}
         {% if post.category %} · {{ post.category }}{% endif %}
-        {% if post.ai_translation %} · AI translation{% endif %}
       </p>
       <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 110 }}</p>
     </a>
@@ -26,15 +23,19 @@ layout: default
 </ul>
 
 <script>
+  function show(lang) {
+    document.querySelectorAll('.filters button').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.querySelectorAll('.post-list li').forEach(function (li) {
+      li.hidden = li.dataset.lang !== lang;
+    });
+  }
   document.querySelectorAll('.filters button').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      document.querySelectorAll('.filters button').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var lang = btn.dataset.lang;
-      document.querySelector('.en-only').hidden = lang !== 'en';
-      document.querySelectorAll('.post-list li').forEach(function (li) {
-        li.hidden = lang !== 'all' && li.dataset.lang !== lang;
-      });
+      show(btn.dataset.lang);
+      history.replaceState(null, '', btn.dataset.lang === 'en' ? '#en' : location.pathname);
     });
   });
+  if (location.hash === '#en') show('en');
 </script>

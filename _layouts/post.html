@@ -18,5 +18,5 @@ layout: default
   <div class="content">
     {{ content }}
   </div>
-  <p class="back"><a href="{{ '/' | relative_url }}">← {% if page.lang == 'en' %}All writings{% else %}全部文章{% endif %}</a></p>
+  <p class="back"><a href="{{ '/' | relative_url }}{% if page.lang == 'en' %}#en{% endif %}">← {% if page.lang == 'en' %}All writings{% else %}全部文章{% endif %}</a></p>
 </article>

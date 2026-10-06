@@ -140,4 +140,3 @@ nav a:hover { color: var(--accent); }
   text-indent: 0;
 }
 .ai-note a { color: var(--accent); text-decoration: none; }
-.filters + .ai-note { margin: -8px 0 24px; }
