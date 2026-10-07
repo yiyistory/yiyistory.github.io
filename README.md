@@ -1,3 +1,3 @@
-# 易伊 Yi Yi
+# Yi Yi
 
 https://yiyistory.github.io
