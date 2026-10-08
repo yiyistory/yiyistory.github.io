@@ -30,7 +30,7 @@ If the whole people walks into extinction<br>
 People will say it was the price of progress<br>
 People will say the dead did great evil while they lived<br>
 People will say there is no building without breaking<br>
-People will say anything, as if they had won a victory in views</p>
+People will say anything, as if they had won a victory</p>
 <p>Interests calculated, gains and losses weighed<br>
 Borders drawn on land divide conscience from conscience<br>
 Plain love loses to two kinds of stern righteousness<br>
