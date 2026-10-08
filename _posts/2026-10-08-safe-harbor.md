@@ -22,8 +22,5 @@ I look closely at my two hands, the lines on them fine and dense<br>
 Frail as they are, they are warm and safe as always<br>
 They will never hurt me, they will always protect me</p>
 <p>They will carry me through every low valley, toward mountains under clear skies and gentle breezes<br>
-White clouds drift in the distance, the sky holds me in a tender embrace<br>
-It's all right, it's all right, everything will pass<br>
-My hands are with me, with me forever<br>
-My safe harbor</p>
+White clouds drift in the distance, the sky holds me in a tender embrace</p>
 </div>
